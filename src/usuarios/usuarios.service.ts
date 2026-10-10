@@ -28,7 +28,20 @@ export class UsuariosService {
   }
 
   update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
-    return `This action updates a #${id} usuario`;
+    const usuario = this.findOne(id);
+    if (usuario) {
+      Object.assign(usuario, updateUsuarioDto);
+    }
+    return usuario;
+  }
+
+  replace(id: number, createUsuarioDto: CreateUsuarioDto) {
+    const usuario = this.findOne(id);
+    if (usuario) {
+      usuario.nombre = createUsuarioDto.nombre;
+      usuario.edad = createUsuarioDto.edad;
+    }
+    return usuario;
   }
 
   remove(id: number) {
