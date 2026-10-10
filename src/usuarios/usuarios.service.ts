@@ -45,6 +45,8 @@ export class UsuariosService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} usuario`;
+    const usuario = this.findOne(id);
+    this.usuarios = this.usuarios.filter((u) => u.id !== id);
+    return usuario;
   }
 }
