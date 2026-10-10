@@ -7,6 +7,8 @@ import {
   Put,
   Param,
   Delete,
+  Options,
+  Header,
 } from '@nestjs/common';
 import { UsuariosService } from './usuarios.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
@@ -45,4 +47,12 @@ export class UsuariosController {
   remove(@Param('id') id: string) {
     return this.usuariosService.remove(+id);
   }
+
+  @Options()
+  @Header('Allow', 'GET, HEAD, POST, OPTIONS')
+  optionsAll() {}
+
+  @Options(':id')
+  @Header('Allow', 'GET, HEAD, PUT, PATCH, DELETE, OPTIONS')
+  optionsOne() {}
 }
