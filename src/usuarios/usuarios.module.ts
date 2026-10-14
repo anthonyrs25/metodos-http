@@ -1,3 +1,5 @@
+// Une el controller con el service
+
 import { Module } from '@nestjs/common';
 import { UsuariosService } from './usuarios.service';
 import { UsuariosController } from './usuarios.controller';

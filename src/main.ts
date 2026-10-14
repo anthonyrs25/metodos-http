@@ -1,3 +1,5 @@
+// Arranca la aplicación en el puerto 3000
+
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 

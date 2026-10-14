@@ -1,3 +1,5 @@
+// Prepara el texto de la ruta de ejemplo
+
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

@@ -1,3 +1,5 @@
+// Cómo se guarda cada usuario (con id)
+
 export class Usuario {
   id: number;
   nombre: string;
